@@ -1,0 +1,79 @@
+.title-2 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  text-align: center;
+  color: white;
+}
+.landing-main {
+  background-image: url("../Images/bg.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 87vh;
+}
+.description-2 {
+  font-size: 21px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+}
+.grid-1 {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+.grid-2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  color: white; 
+}
+.op-class{
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #d8dee0);
+
+}
+.input-11{
+  border: none;
+  width: 350px;
+}
+.input-2 {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  
+}
+@media (max-width: 992px) {
+  .input-2 {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 600px) {
+  .description-2 {
+    font-size: 16px;
+  }
+  .title-2 {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .input-2 {
+    margin-top: 70px;
+  }
+  .input-11{
+    border: none;
+    width: 300px;
+  }
+}

@@ -1,0 +1,181 @@
+.game-bg {
+  background-image: url("../Images/bg.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding-bottom: 40px;
+}
+.dd {
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #d8dee0);
+}
+.ground-bg {
+  background-image: url("../Images/pitch.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 600px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.gameInput {
+  width: 350px;
+  margin-top: 20px;
+}
+.ground {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  overflow: hidden;
+}
+.gameTable {
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.pitch-width {
+  width: 500px;
+  height: 600px;
+}
+.container1 {
+  overflow-x: auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+
+  color: white;
+}
+.div1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 55px !important;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.div2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 115px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.div3 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 110px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.game-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shirt-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.div4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.goal-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  width: 500px;
+  height: 60px;
+  color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+@media (max-width: 1280px) {
+  .gameTable {
+    margin-left: 20px;
+  }
+  .ground-bg {
+    width: 400px;
+  }
+  .goal-score {
+    width: 400px;
+  }
+  .pitch-width {
+    width: 400px;
+  }
+}
+@media (max-width: 1200px) {
+  .ground-bg {
+    width: 400px;
+  }
+  .pitch-width {
+    width: 400px;
+  }
+}
+@media (max-width: 1100px) {
+  .ground-bg {
+    width: 300px;
+  }
+  .goal-score {
+    width: 300px;
+  }
+  .pitch-width {
+    width: 300px;
+  }
+}
+@media (max-width: 992px) {
+  .ground {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pitch-width {
+    width: 600px;
+  }
+  .goal-score {
+    width: 600px;
+  }
+  .ground-bg {
+    width: 600px;
+  }
+  .gameTable {
+    margin-top: 150px;
+  }
+}
+@media (max-width: 620px) {
+  .ground {
+    width: 100%;
+  }
+  .goal-score {
+    width: 100%;
+    /* margin: auto; */
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .ground-bg {
+    width: 95%;
+    margin: auto;
+  }
+  .pitch-width {
+    width: 95%;
+  }
+  .gameTable {
+    /* padding-left: 20px; */
+    margin-top: 50px;
+    padding-right: 30px;
+    width: 100%;
+    align-items: unset;
+  }
+  .gameInput {
+    width: 300px;
+  }
+}
