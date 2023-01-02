@@ -7,7 +7,9 @@
 
   color: white;
 }
-
+.MuiTablePagination-menuItem {
+  background-color: white !important;
+}
 .title {
   margin-top: 20px;
   text-align: center;
@@ -40,9 +42,9 @@ td {
   color: white !important;
   border: 1px solid black;
 }
-.MuiPaper-elevation1{
-    box-shadow: unset !important;
+.MuiPaper-elevation1 {
+  box-shadow: unset !important;
 }
 .MuiTableCell-root {
-    border-bottom: unset !important;
+  border-bottom: unset !important;
 }

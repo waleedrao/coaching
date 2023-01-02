@@ -35,7 +35,7 @@ import CallToActionIcon from "@mui/icons-material/CallToAction";
 import SettingsIcon from "@mui/icons-material/Settings";
 import CloseIcon from "@mui/icons-material/Close";
 // import PersonIcon from '@mui/icons-material/Person';
-
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 250,
@@ -71,30 +71,37 @@ const listItems = [
   {
     listIcon: <Home />,
     listText: "Home",
+    link: "/",
   },
   {
     listIcon: <SchoolIcon />,
-    listText: "Staf",
+    listText: "Staff",
+    link: "/staff",
   },
   {
     listIcon: <PersonIcon />,
     listText: "Spelerslijst",
+    link: "/players",
   },
   {
     listIcon: <VideoLabelIcon />,
     listText: "Tactiek",
+    link: "/game",
   },
   {
     listIcon: <EmojiEventsIcon />,
     listText: "Competitie",
+    link: "/ranking",
   },
   {
     listIcon: <CalendarTodayIcon />,
     listText: "Kalender",
+    link: "/calender",
   },
   {
     listIcon: <SettingsApplicationsIcon />,
-    listText: "Taining",
+    listText: "ranking",
+    link: "/ranking",
   },
   {
     listIcon: <AccessTimeFilledIcon />,
@@ -129,14 +136,27 @@ export default function SideApp() {
       </div>
       <Divider />
       <List>
-        {listItems.map((listItem, index) => (
-          <ListItem className={classes.listItem} button key={index}>
-            <ListItemIcon className={classes.listItem}>
-              {listItem.listIcon}
-            </ListItemIcon>
-            <ListItemText primary={listItem.listText} />
-          </ListItem>
-        ))}
+        {listItems.map((listItem, index) => {
+          {
+            return listItem?.link == undefined ? (
+              <ListItem className={classes.listItem} button key={index}>
+                <ListItemIcon className={classes.listItem}>
+                  {listItem.listIcon}
+                </ListItemIcon>
+                <ListItemText primary={listItem.listText} />
+              </ListItem>
+            ) : (
+              <Link to={listItem?.link && listItem?.link}>
+                <ListItem className={classes.listItem} button key={index}>
+                  <ListItemIcon className={classes.listItem}>
+                    {listItem.listIcon}
+                  </ListItemIcon>
+                  <ListItemText primary={listItem.listText} />
+                </ListItem>
+              </Link>
+            );
+          }
+        })}
       </List>
     </Box>
   );

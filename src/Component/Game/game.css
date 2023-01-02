@@ -2,12 +2,85 @@
   background-image: url("../Images/bg.jpeg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
 
-  padding-bottom: 40px;
+  background-size: cover;
+  min-height: 100vh;
 }
 .dd {
   background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #d8dee0);
+}
+.pitch.responsive {
+  padding-bottom: 0px !important;
+  width: 900px !important;
+  height: 525px;
+}
+
+.pitch .teams {
+  position: absolute;
+  height: 525px;
+  width: 900px;
+  display: flex;
+}
+
+.player-view .player {
+  /* font-family: "Font Awesome 6 Brand";
+  content: "\f553";
+  background-image: url("./../../shirt.jpg"); */
+}
+.player-view .player .name {
+  position: absolute;
+  width: max-content;
+  color: white !important;
+}
+@media (max-width: 1125px) {
+  .pitch.responsive {
+    padding-bottom: 0px !important;
+    width: 600px !important;
+    height: 425px;
+  }
+
+  .pitch .teams {
+    position: absolute;
+    width: 600px;
+    height: 425px;
+    display: flex;
+  }
+  .player-view .player .name {
+    position: absolute;
+    bottom: -65% !important;
+    font-size: 14px !important;
+    width: max-content;
+    color: white !important;
+  }
+}
+@media (max-width: 825px) {
+  .diFCol {
+    flex-direction: column;
+  }
+}
+@media (max-width: 600px) {
+  .pitch.responsive {
+    padding-bottom: 0px !important;
+    width: 375px !important;
+    height: 225px;
+  }
+
+  .pitch .teams {
+    position: absolute;
+    width: 375px;
+    height: 225px;
+    display: flex;
+  }
+  .player-view .player .name {
+    position: absolute;
+    bottom: -88% !important;
+    font-size: 10px !important;
+    width: max-content;
+    color: white !important;
+  }
+  .diFCol {
+    flex-direction: column;
+  }
 }
 .ground-bg {
   background-image: url("../Images/pitch.jpeg");
@@ -27,13 +100,15 @@
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  overflow: hidden;
+  overflow: auto;
 }
 .gameTable {
   margin-left: 100px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: scroll;
   flex-direction: column;
 }
 .pitch-width {
@@ -102,7 +177,7 @@
 }
 @media (max-width: 1280px) {
   .gameTable {
-    margin-left: 20px;
+    /* margin-left: 20px; */
   }
   .ground-bg {
     width: 400px;
@@ -148,7 +223,7 @@
     width: 600px;
   }
   .gameTable {
-    margin-top: 150px;
+    margin-top: 50px;
   }
 }
 @media (max-width: 620px) {
@@ -174,6 +249,7 @@
     padding-right: 30px;
     width: 100%;
     align-items: unset;
+    overflow: scroll;
   }
   .gameInput {
     width: 300px;

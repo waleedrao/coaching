@@ -14,6 +14,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;
+}
+.member-card:hover .staff-title {
+  color: bisque !important;
+}
+.member-card:hover .staff-title1 {
+  color: bisque !important;
 }
 .member-card {
   width: 100%;
@@ -48,9 +55,6 @@
 .member-main {
   padding: 20px;
   text-align: center;
-  background-image: linear-gradient(to bottom, rgba(255,0,0,0), #d8dee0);
-
-  
 }
 @media (max-width: 1200px) {
   .member-main {

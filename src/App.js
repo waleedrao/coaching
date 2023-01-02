@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import NavbarCoaching from "./Component/Navbar/Navbar";
 import Login from "./Component/Login/Login";
 import HeaderCompoent from "./Component/SideBar/SideBar";
@@ -10,29 +9,57 @@ import Landing from "./Component/LandingPage/Landing";
 import MemberPage from "./Component/MemberPage/MemberPage";
 import SideApp from "./Component/SideBar/SideBar";
 import Table1 from "./Component/Table1/Table1";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
+import jwt from "jwt-decode";
 import Table2 from "./Component/Table1/table2";
-import Staf from "./Component/Staf/Staf";
+import Staff from "./Component/Staf/Staf";
 import GameTable from "./Component/Game/GameTable";
 import Game from "./Component/Game/Game";
+import Signup from "./Component/Login/Signup";
+import Ranking from "./Component/Table1/ranking";
+import MyCalendar from "./Component/calander/Calendar";
 
+import AddEvents from "./Component/calander/AddEvents";
+import UpdateEvent from "./Component/calander/UpdateEvent";
+const PrivateRoutes = () => {
+  const [token, setAdminToken] = useState(sessionStorage?.getItem("token"));
+
+  return token !== null ? <Outlet /> : <Navigate to="/login" />;
+};
+const Redirect = () => {
+  const [token, setAdminToken] = useState(sessionStorage?.getItem("token"));
+
+  return token !== null ? <Navigate to="/" /> : <Outlet />;
+};
 function App() {
   // const { toggleMenu } = useContext(MenuContext);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/Landing" element={<Landing />} />
-        <Route path="/MemberPage" element={<MemberPage />} />
-        <Route path="/Table1" element={<Table1 />} />
-        <Route path="/Table2" element={<Table2 />} />
-        <Route path="/staf" element={<Staf />} />
-        <Route path="/gametable" element={<GameTable />} />
-        <Route path="/game" element={<Game />} />
-
-
-
-
+        <Route element={<PrivateRoutes />}>
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/Landing" element={<Landing />} />
+          <Route path="/" element={<MemberPage />} />
+          {/* this is the table for the players */}
+          <Route path="/players" element={<Table1 />} />{" "}
+          <Route path="/game" element={<Game />} />
+          {/* staff page */}
+          <Route path="/staff" element={<Staff />} />
+          <Route path="/ranking" element={<Ranking />} />
+          <Route path="/calender" exact element={<MyCalendar />} />
+          <Route path="/events/add" element={<AddEvents />} />
+          <Route path="/event/:id/update" element={<UpdateEvent />} />{" "}
+        </Route>{" "}
+        <Route element={<Redirect />}>
+          <Route path="/login" element={<Login />} exact />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

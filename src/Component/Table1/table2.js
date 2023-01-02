@@ -9,7 +9,7 @@ import rows from "./rowsData";
 import { TbEdit } from "react-icons/tb";
 import { BsFillPersonDashFill } from "react-icons/bs";
 import "./style.css";
-const Table2 = () => (
+const Table2 = ({ data, handleDelete }) => (
   <div>
     <Paper className="container">
       <Table>
@@ -31,46 +31,36 @@ const Table2 = () => (
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(
-            ({
-              nr,
-              Voornaam,
-              Tussenv,
-              Achternaam,
-              Positie,
-              Been,
-              Geslacht,
-              Geboortedautum,
-              Leedtijd,
-              Email,
-              Telefoonnummer,
-              Beheer,
-            }) => (
-              <TableRow>
-                <TableCell numeric>{nr}</TableCell>
-                <TableCell numeric>{Voornaam}</TableCell>
-                <TableCell numeric>{Tussenv}</TableCell>
-                <TableCell numeric>{Achternaam}</TableCell>
-                <TableCell numeric>{Positie}</TableCell>
-                <TableCell numeric>{Been}</TableCell>
-                <TableCell numeric>{Geslacht}</TableCell>
-                <TableCell numeric>{Geboortedautum}</TableCell>
-                <TableCell numeric>{Leedtijd}</TableCell>
-                <TableCell numeric>{Email}</TableCell>
-                <TableCell numeric>{Telefoonnummer}</TableCell>
-                <TableCell numeric>
-                  <div className="edit-person">
-                    <div>
-                      <TbEdit fontSize={25} fill="blue" />
-                    </div>
-                    <div>
-                      <BsFillPersonDashFill fontSize={25}  fill="black" />
-                    </div>
+          {data?.map((d, i) => (
+            <TableRow>
+              <TableCell numeric>{i + 1}</TableCell>
+              <TableCell numeric>{d?.firstName}</TableCell>
+              <TableCell numeric>{d.lastName}</TableCell>
+              <TableCell numeric>{d.int}</TableCell>
+              <TableCell numeric>{d.position}</TableCell>
+              <TableCell numeric>{d.bean}</TableCell>
+              <TableCell numeric>{d.sex}</TableCell>
+              <TableCell numeric>{d.dob}</TableCell>
+              <TableCell numeric>{d.age}</TableCell>
+              <TableCell numeric>{d.email}</TableCell>
+              <TableCell numeric>{d.phone}</TableCell>
+
+              <TableCell numeric>
+                <div className="edit-person">
+                  <div>
+                    <TbEdit fontSize={25} fill="blue" />
                   </div>
-                </TableCell>
-              </TableRow>
-            )
-          )}
+                  <div
+                    onClick={() => {
+                      handleDelete(d._id);
+                    }}
+                  >
+                    <BsFillPersonDashFill fontSize={25} fill="black" />
+                  </div>
+                </div>
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </Paper>
