@@ -35,7 +35,8 @@ import CallToActionIcon from "@mui/icons-material/CallToAction";
 import SettingsIcon from "@mui/icons-material/Settings";
 import CloseIcon from "@mui/icons-material/Close";
 // import PersonIcon from '@mui/icons-material/Person';
-import { Link } from "react-router-dom";
+
+import { useNavigate, useLocation, Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 250,
@@ -123,6 +124,7 @@ const listItems = [
 
 export default function SideApp() {
   const classes = useStyles();
+  let navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   const toggleSlider = () => {
@@ -157,6 +159,19 @@ export default function SideApp() {
             );
           }
         })}
+        <ListItem
+          className={classes.listItem}
+          button
+          onClick={() => {
+            sessionStorage.removeItem("token");
+            navigate("/login");
+          }}
+        >
+          <ListItemIcon className={classes.listItem}>
+            <SettingsIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Logout"} />
+        </ListItem>
       </List>
     </Box>
   );

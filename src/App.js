@@ -28,6 +28,8 @@ import MyCalendar from "./Component/calander/Calendar";
 
 import AddEvents from "./Component/calander/AddEvents";
 import UpdateEvent from "./Component/calander/UpdateEvent";
+import Forgot from "./Component/Login/forgot";
+import Resetpassword from "./Component/Login/Resetpassword";
 const PrivateRoutes = () => {
   const [token, setAdminToken] = useState(sessionStorage?.getItem("token"));
 
@@ -44,7 +46,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<PrivateRoutes />}>
-          <Route path="/signup" element={<Signup />} />
           <Route path="/Landing" element={<Landing />} />
           <Route path="/" element={<MemberPage />} />
           {/* this is the table for the players */}
@@ -60,6 +61,9 @@ function App() {
         <Route element={<Redirect />}>
           <Route path="/login" element={<Login />} exact />
         </Route>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/reset" element={<Resetpassword />} />
       </Routes>
     </BrowserRouter>
   );

@@ -90,10 +90,12 @@ const Login = () => {
                 Log in
               </button>
             </div>
-            <div className="watch-link">
-              Wachtwoord vergeten?
-              {/* <Link>  Wachtwoord vergeten? </Link> */}
-            </div>
+            <Link to="/forgot">
+              <div className="watch-link">
+                Wachtwoord vergeten?
+                {/* <Link>  Wachtwoord vergeten? </Link> */}
+              </div>
+            </Link>
 
             <div className="kilk-main">
               <span
