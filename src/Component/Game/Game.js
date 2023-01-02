@@ -40,9 +40,9 @@ const Game = () => {
   }, []);
   useEffect(() => {
     serverInstance
-      .get("/players/findAll")
+      .get(`/players/findAll/${user?._id}`)
       .then((res) => {
-        setPlayers(res.data);
+        setPlayers(res.data.data);
         console.log(res, "get res", res.data);
       })
       .catch((err) => {
