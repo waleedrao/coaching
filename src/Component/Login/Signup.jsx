@@ -65,7 +65,7 @@ const Signup = () => {
                 className="email"
               />
             </div>
-            <div>
+            <div className="uppr">
               <div style={{ position: "relative" }}>
                 <input
                   type={show == true ? "text" : "password"}

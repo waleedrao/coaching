@@ -28,6 +28,13 @@
   bottom: 13px;
   cursor: pointer;
 }
+.uppr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px 10px;
+}
 .login-title {
   font-size: 24px;
   font-weight: 600;
