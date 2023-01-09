@@ -25,7 +25,11 @@ const Login = () => {
       Swal.fire("Login successfully", "", "success");
     } catch (err) {
       console.log(err);
-      Swal.fire("Something went wrong!", "", "error");
+      Swal.fire(
+        err.response.data.message || "Something went wrong!",
+        "",
+        "error"
+      );
     }
   };
   return (

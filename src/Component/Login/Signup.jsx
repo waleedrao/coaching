@@ -38,7 +38,11 @@ const Signup = () => {
           navigate("/");
         } catch (err) {
           console.log(err);
-          Swal.fire("Something went wrong!", "", "error");
+          Swal.fire(
+            err.response.data.message || "Something went wrong!",
+            "",
+            "error"
+          );
         }
       }
     } else return Swal.fire("Enter a valid Email", "", "error");
