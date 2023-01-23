@@ -91,8 +91,8 @@ const listItems = [
   },
   {
     listIcon: <EmojiEventsIcon />,
-    listText: "Competitie",
-    link: "/ranking",
+    listText: "Player Statistic",
+    link: "/player-statics",
   },
   {
     listIcon: <CalendarTodayIcon />,
@@ -134,7 +134,7 @@ export default function SideApp() {
   const sideList = () => (
     <Box className={classes.menuSliderContainer} component="div">
       <div className={classes.closeMain}>
-        Close <CloseIcon className={classes.iconColor} onClick={toggleSlider} />
+        <CloseIcon className={classes.iconColor} onClick={toggleSlider} />
       </div>
       <Divider />
       <List>
@@ -183,7 +183,7 @@ export default function SideApp() {
       <Box component="nav">
         <AppBar position="static">
           <Toolbar>
-            <Typography>Menu</Typography>
+            {/* <Typography>Menu</Typography> */}
 
             <IconButton
               onClick={toggleSlider}

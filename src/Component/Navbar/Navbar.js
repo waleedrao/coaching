@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -9,11 +9,16 @@ import "./Navbar.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Logo from "../Images/logo.png";
+import { Link, useNavigate } from "react-router-dom";
 const NavbarCoaching = () => {
+  const navigate = useNavigate();
+  const [token, setAdminToken] = useState(sessionStorage?.getItem("token"));
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  useEffect(() => {}, [token]);
+
   return (
     <Navbar bg="" expand="lg">
       <Container fluid style={{ color: "white" }}>
@@ -30,9 +35,31 @@ const NavbarCoaching = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <div className="right-11">Home</div>
-            <div className="right-22">Inloggen</div>
-            <div className="right-33">Registreren</div>
+            <Link style={{ textDecoration: "none" }} to="/home">
+              <div className="right-11">Home</div>
+            </Link>
+
+            {token !== null ? (
+              <div
+                onClick={() => {
+                  sessionStorage.removeItem("token");
+                  navigate("/login");
+                }}
+                style={{
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+              >
+                <div className="right-22">logout</div>
+              </div>
+            ) : (
+              <Link style={{ textDecoration: "none" }} to="/login">
+                <div className="right-22">Inloggen</div>
+              </Link>
+            )}
+            <Link style={{ textDecoration: "none" }} to="/signup">
+              <div className="right-33">Registreren</div>
+            </Link>
           </Offcanvas.Body>
         </Offcanvas>
         <div className="new-div">
@@ -63,9 +90,40 @@ const NavbarCoaching = () => {
             <></>
 
             <Form className="d-flex nav-right ">
-              <div className="right-1">Home</div>
-              <div className="right-2">Inloggen</div>
-              <div className="right-3">Registreren</div>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to="/home"
+              >
+                <div className="right-1">Home</div>
+              </Link>
+              {token !== null ? (
+                <div
+                  onClick={() => {
+                    sessionStorage.removeItem("token");
+                    navigate("/login");
+                  }}
+                  style={{
+                    color: "white",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  <div className="right-2">logout</div>
+                </div>
+              ) : (
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to="/login"
+                >
+                  <div className="right-2">Inloggen</div>
+                </Link>
+              )}
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to="/signup"
+              >
+                <div className="right-3">Registreren</div>
+              </Link>
             </Form>
             {/* <Button variant="primary" onClick={handleShow}>
         Launch

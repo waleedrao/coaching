@@ -142,17 +142,31 @@ const Staff = () => {
     }
   };
   const handleDelete = (id) => {
-    serverInstance
-      .delete(`/staff/delete/${id}`)
-      .then((res) => {
-        setStaff(staff.filter((data) => data._id !== res.data.deletedStaff));
-        Swal.fire("Staff deleted successfully", "", "success");
-        console.log(res, "get res", res.data);
-      })
-      .catch((err) => {
-        console.log("err", err);
-        Swal.fire("Something went wrong!", "", "error");
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        serverInstance
+          .delete(`/staff/delete/${id}`)
+          .then((res) => {
+            setStaff(
+              staff.filter((data) => data._id !== res.data.deletedStaff)
+            );
+            Swal.fire("Staff deleted successfully", "", "success");
+            console.log(res, "get res", res.data);
+          })
+          .catch((err) => {
+            console.log("err", err);
+            Swal.fire("Something went wrong!", "", "error");
+          });
+      }
+    });
   };
   const showModal = () => {
     setIsModalOpen(true);

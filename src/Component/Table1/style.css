@@ -7,6 +7,21 @@
 
   color: white;
 }
+.tableeee {
+  display: flex;
+  max-width: 320px;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.tableBY {
+  background-color: #263a6d;
+  color: white;
+  padding: 5px 10px;
+  margin: 10px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
 .MuiTablePagination-menuItem {
   background-color: white !important;
 }

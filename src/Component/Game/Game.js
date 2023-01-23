@@ -327,10 +327,10 @@ const Game = () => {
                       --Please choose a format--
                     </option>
                     <option value="1">3-4-3</option>
-                    <option value="2">2-4-4</option>
+                    <option value="2">4-3-3</option>
                     <option value="3">3-3-4</option>
                     <option value="4">4-4-2</option>
-                    <option value="5">other</option>
+                    <option value="5">5-3-2</option>
                   </select>
                 </div>
               </div>

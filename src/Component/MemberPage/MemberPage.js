@@ -28,6 +28,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import CloseIcon from "@mui/icons-material/Close";
 import jwt from "jwt-decode";
 import Navbar2Coaching from "../Navbar/Navbar2";
+import NavbarCoaching from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 const MemberPage = () => {
   const userAccess = sessionStorage?.getItem("token");
@@ -60,11 +61,11 @@ const MemberPage = () => {
     },
     {
       piture: <GiGraduateCap fontSize={80} />,
-      title: "Competitie",
+      title: "Player Statistic",
       title_1: "Binnenkort",
       title_2: "Binnenkort",
       title_3: "Binnenkort",
-      link: "/ranking",
+      link: "/player-statics",
     },
     {
       piture: <GiGraduateCap fontSize={80} />,
@@ -88,7 +89,7 @@ const MemberPage = () => {
     <div>
       <div className="member-main-bg">
         <div className="oveLay">
-          <Navbar2Coaching />
+          <NavbarCoaching />
           <div className="member-main">
             <div className="member-title">Welkom op de Memberpagina</div>
             <div className="member-detail">

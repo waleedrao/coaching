@@ -33,17 +33,17 @@ const Soccer = ({ players, format }) => {
     color: "red",
     squad: {
       cam: [
-        { number: 4, name: players && players[3].firstName },
-        { number: 5, name: players && players[4].firstName },
+        { number: 8, name: players && players[7].firstName },
         { number: 6, name: players && players[5].firstName },
         { number: 7, name: players && players[6].firstName },
       ],
       df: [
         { number: 2, name: players && players[1].firstName },
         { number: 3, name: players && players[2].firstName },
+        { number: 4, name: players && players[3].firstName },
+        { number: 5, name: players && players[4].firstName },
       ],
       fw: [
-        { number: 8, name: players && players[7].firstName },
         { number: 9, name: players && players[8].firstName },
         { number: 10, name: players && players[9].firstName },
         { number: 11, name: players && players[10].firstName },
@@ -96,6 +96,28 @@ const Soccer = ({ players, format }) => {
     },
   };
   let awayTeam4 = {
+    color: "red",
+    squad: {
+      cam: [
+        { number: 9, name: players && players[8].firstName },
+        { number: 8, name: players && players[7].firstName },
+        { number: 6, name: players && players[5].firstName },
+      ],
+      df: [
+        { number: 2, name: players && players[1].firstName },
+        { number: 3, name: players && players[2].firstName },
+        { number: 4, name: players && players[3].firstName },
+        { number: 5, name: players && players[4].firstName },
+        { number: 7, name: players && players[6].firstName },
+      ],
+      fw: [
+        { number: 10, name: players && players[9].firstName },
+        { number: 11, name: players && players[10].firstName },
+      ],
+      gk: { number: 1, name: players && players[0].firstName },
+    },
+  };
+  let awayTeam5 = {
     color: "red",
     squad: {
       cam: [
