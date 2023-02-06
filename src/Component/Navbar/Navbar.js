@@ -35,7 +35,7 @@ const NavbarCoaching = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Link style={{ textDecoration: "none" }} to="/home">
+            <Link style={{ textDecoration: "none" }} to="/">
               <div className="right-11">Home</div>
             </Link>
 
@@ -90,10 +90,7 @@ const NavbarCoaching = () => {
             <></>
 
             <Form className="d-flex nav-right ">
-              <Link
-                style={{ color: "white", textDecoration: "none" }}
-                to="/home"
-              >
+              <Link style={{ color: "white", textDecoration: "none" }} to="/">
                 <div className="right-1">Home</div>
               </Link>
               {token !== null ? (

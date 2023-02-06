@@ -71,8 +71,8 @@ const useStyles = makeStyles((theme) => ({
 const listItems = [
   {
     listIcon: <Home />,
-    listText: "Home",
-    link: "/",
+    listText: "member",
+    link: "/member",
   },
   {
     listIcon: <SchoolIcon />,

@@ -46,9 +46,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {" "}
+        <Route path="/" element={<Landing />} />
         <Route element={<PrivateRoutes />}>
-          <Route path="/home" element={<Landing />} />
-          <Route path="/" element={<MemberPage />} />
+          <Route path="/member" element={<MemberPage />} />
           {/* this is the table for the players */}
           <Route path="/players" element={<Table1 />} />{" "}
           <Route path="/game" element={<Game />} />
