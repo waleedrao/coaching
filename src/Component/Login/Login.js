@@ -21,7 +21,7 @@ const Login = () => {
       const data = await serverInstance.post("/user/login", state);
       console.log(data, "dataaa");
       sessionStorage.setItem("token", data.data.token);
-      navigate("/", { replace: true });
+      navigate("/member", { replace: true });
       Swal.fire("Login successfully", "", "success");
     } catch (err) {
       console.log(err);
@@ -37,85 +37,92 @@ const Login = () => {
       <div className="login-bg">
         <div className="oveLay">
           <NavbarCoaching />
-          <div className="login-main">
-            <div className="login-title">Welkom bij Digi Coaching Unit</div>
-            <div className="login-detail">
-              Vul hier de logingegevens in om gerbruik te maken van Difi
-              Coaching Unit!
-            </div>
-
-            <div className="">
-              <input
-                placeholder="Voer uw emailadres in"
-                value={state.email}
-                onChange={(e) => {
-                  setState({ ...state, email: e.target.value });
-                }}
-                className="email"
-              />
-            </div>
-            <div style={{ position: "relative" }}>
-              <input
-                type={show == true ? "text" : "password"}
-                placeholder="Voer uw wachtwoord in"
-                className="password"
-                value={state.password}
-                onChange={(e) => {
-                  setState({ ...state, password: e.target.value });
-                }}
-              />
-              {show == true ? (
-                <span
-                  className="eyee"
-                  onClick={() => {
-                    setShow(false);
-                  }}
-                >
-                  <AiOutlineEyeInvisible />
-                </span>
-              ) : (
-                <span
-                  className="eyee"
-                  onClick={() => {
-                    setShow(true);
-                  }}
-                >
-                  <AiOutlineEye />
-                </span>
-              )}
-            </div>
-            <div>
-              <button
-                className="login-button"
-                onClick={(e) => {
-                  handleSubmit(e);
-                }}
-              >
-                Log in
-              </button>
-            </div>
-            <Link to="/forgot">
-              <div className="watch-link">
-                Wachtwoord vergeten?
-                {/* <Link>  Wachtwoord vergeten? </Link> */}
+          <form
+            onSubmit={(e) => {
+              handleSubmit(e);
+            }}
+          >
+            <div className="login-main">
+              <div className="login-title">Welkom bij Digi Coaching Unit</div>
+              <div className="login-detail">
+                Vul hier de logingegevens in om gerbruik te maken van Difi
+                Coaching Unit!
               </div>
-            </Link>
 
-            <div className="kilk-main">
-              <span
-                className=""
-                style={{
-                  color: "white",
-                }}
-              >
-                Heeft u nog geen account?
-              </span>{" "}
-              <Link to="/signup">
-                {" "}
-                <div className="klik-text"> Klik dan hier.</div>
+              <div className="">
+                <input
+                  placeholder="Voer uw emailadres in"
+                  value={state.email}
+                  onChange={(e) => {
+                    setState({ ...state, email: e.target.value });
+                  }}
+                  className="email"
+                />
+              </div>
+              <div style={{ position: "relative" }}>
+                <input
+                  type={show == true ? "text" : "password"}
+                  placeholder="Voer uw wachtwoord in"
+                  className="password"
+                  value={state.password}
+                  onChange={(e) => {
+                    setState({ ...state, password: e.target.value });
+                  }}
+                />
+                {show == true ? (
+                  <span
+                    className="eyee"
+                    onClick={() => {
+                      setShow(false);
+                    }}
+                  >
+                    <AiOutlineEyeInvisible />
+                  </span>
+                ) : (
+                  <span
+                    className="eyee"
+                    onClick={() => {
+                      setShow(true);
+                    }}
+                  >
+                    <AiOutlineEye />
+                  </span>
+                )}
+              </div>
+              <div>
+                <button
+                  className="login-button"
+                  type="submit"
+                  onClick={(e) => {
+                    handleSubmit(e);
+                  }}
+                >
+                  Log in
+                </button>
+              </div>
+              <Link to="/forgot">
+                <div className="watch-link">
+                  Wachtwoord vergeten?
+                  {/* <Link>  Wachtwoord vergeten? </Link> */}
+                </div>
               </Link>
+
+              <div className="kilk-main">
+                <span
+                  className=""
+                  style={{
+                    color: "white",
+                  }}
+                >
+                  Heeft u nog geen account?
+                </span>{" "}
+                <Link to="/signup">
+                  {" "}
+                  <div className="klik-text"> Klik dan hier.</div>
+                </Link>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

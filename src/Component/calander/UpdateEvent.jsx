@@ -31,7 +31,7 @@ const UpdateEvent = ({ updateEventApi, event, error }) => {
       setError(error);
     }
     if (!error.start && !error.end && dbError !== false) {
-      setTimeout(navigate("/"));
+      setTimeout(navigate("/member"));
     }
   }, [rerender]);
   //using form-hook to register event data

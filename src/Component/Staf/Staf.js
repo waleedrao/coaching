@@ -51,12 +51,10 @@ const Staff = () => {
     e.preventDefault();
     if (edit == "edit") {
       if (
-        state.age === "" ||
         state.firstName === "" ||
         state.lastName === "" ||
         state.int === "" ||
         state.position === "" ||
-        state.bean === "" ||
         state.dob === "" ||
         state.email === "" ||
         state.phone === "" ||
@@ -96,12 +94,10 @@ const Staff = () => {
       }
     } else {
       if (
-        state.age === "" ||
         state.firstName === "" ||
         state.lastName === "" ||
         state.int === "" ||
         state.position === "" ||
-        state.bean === "" ||
         state.dob === "" ||
         state.email === "" ||
         state.phone === "" ||
@@ -234,7 +230,7 @@ const Staff = () => {
                       }}
                     />
                   </div>
-                  <div className="holdalltogather">
+                  {/* <div className="holdalltogather">
                     <div className="labe">bean</div>
                     <input
                       className="label_input"
@@ -243,7 +239,7 @@ const Staff = () => {
                         setState({ ...state, bean: e.target.value });
                       }}
                     />
-                  </div>
+                  </div> */}
                   <div className="holdalltogather">
                     <div className="labe">sex</div>
                     <select
@@ -281,7 +277,7 @@ const Staff = () => {
                       }}
                     />
                   </div>
-                  <div className="holdalltogather">
+                  {/* <div className="holdalltogather">
                     <div className="labe">age</div>
                     <input
                       className="label_input"
@@ -291,7 +287,7 @@ const Staff = () => {
                         setState({ ...state, age: e.target.value });
                       }}
                     />
-                  </div>
+                  </div> */}
 
                   <div className="holdalltogather">
                     <div className="labe">email</div>

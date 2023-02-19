@@ -39,7 +39,7 @@ const PrivateRoutes = () => {
 const Redirect = () => {
   const [token, setAdminToken] = useState(sessionStorage?.getItem("token"));
 
-  return token !== null ? <Navigate to="/" /> : <Outlet />;
+  return token !== null ? <Navigate to="/member" /> : <Outlet />;
 };
 function App() {
   // const { toggleMenu } = useContext(MenuContext);
@@ -47,7 +47,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         {" "}
-        <Route path="/" element={<Landing />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/member" element={<MemberPage />} />
           {/* this is the table for the players */}
@@ -62,7 +61,9 @@ function App() {
           <Route path="/event/:id/update" element={<UpdateEvent />} />{" "}
         </Route>{" "}
         <Route element={<Redirect />}>
-          <Route path="/login" element={<Login />} exact />
+          {" "}
+          <Route path="/" exact element={<Landing />} />
+          <Route path="/login" element={<Login />} exact />{" "}
         </Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot" element={<Forgot />} />

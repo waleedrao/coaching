@@ -11,35 +11,35 @@ import { TbEdit } from "react-icons/tb";
 import { BsFillPersonDashFill } from "react-icons/bs";
 const columns = [
   { id: "nr", label: "Nr", minWidth: 170 },
-  { id: "firstName", label: "Voornaam", minWidth: 100 },
+  { id: "firstName", label: "Functie", minWidth: 100 },
   {
     id: "lastName",
-    label: "Achternaam",
+    label: "Voornaaam",
     minWidth: 170,
     align: "right",
     format: (value) => value.toLocaleString("en-US"),
   },
   {
     id: "int",
-    label: "Tussenv",
+    label: "TussenV",
     minWidth: 170,
     align: "right",
     format: (value) => value.toLocaleString("en-US"),
   },
   {
     id: "position",
-    label: "Positie",
+    label: "Achternaam",
     minWidth: 170,
     align: "right",
     format: (value) => value.toFixed(2),
   },
-  {
-    id: "bean",
-    label: "Bean",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toFixed(2),
-  },
+  // {
+  //   id: "bean",
+  //   label: "Geboortedatum",
+  //   minWidth: 170,
+  //   align: "right",
+  //   format: (value) => value.toFixed(2),
+  // },
   {
     id: "sex",
     label: "Geslacht",
@@ -54,13 +54,13 @@ const columns = [
     align: "right",
     format: (value) => value.toFixed(2),
   },
-  {
-    id: "age",
-    label: "Leeftijd",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toFixed(2),
-  },
+  // {
+  //   id: "age",
+  //   label: "Leeftijd",
+  //   minWidth: 170,
+  //   align: "right",
+  //   format: (value) => value.toFixed(2),
+  // },
   {
     id: "email",
     label: "Email",
@@ -71,7 +71,7 @@ const columns = [
   {
     id: "phone",
     label: "Tekefoonnummmer",
-    minWidth: 170,
+    minWidth: 200,
     align: "right",
     format: (value) => value.toFixed(2),
   },
