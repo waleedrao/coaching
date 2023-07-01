@@ -35,10 +35,7 @@ const Game = () => {
     const userAccess = sessionStorage?.getItem("token");
     const user = jwt(userAccess);
     console.log("userAccess", user);
-    setUser(user);
-    setState({ ...state, user: user._id });
-  }, []);
-  useEffect(() => {
+
     serverInstance
       .get(`/players/findAll/${user?._id}`)
       .then((res) => {
@@ -48,6 +45,8 @@ const Game = () => {
       .catch((err) => {
         console.log("err", err);
       });
+    setUser(user);
+    setState({ ...state, user: user._id });
   }, []);
 
   const handleSubmit = (e) => {

@@ -61,9 +61,13 @@ const NavbarCoaching = () => {
                 <div className="right-22">Inloggen</div>
               </Link>
             )}
-            <Link style={{ textDecoration: "none" }} to="/signup">
-              <div className="right-33">Registreren</div>
-            </Link>
+            {token == null ? (
+              <Link style={{ textDecoration: "none" }} to="/signup">
+                <div className="right-33">Registreren</div>
+              </Link>
+            ) : (
+              ""
+            )}
           </Offcanvas.Body>
         </Offcanvas>
         <div className="new-div">
@@ -123,12 +127,16 @@ const NavbarCoaching = () => {
                   <div className="right-2">Inloggen</div>
                 </Link>
               )}
-              <Link
-                style={{ color: "white", textDecoration: "none" }}
-                to="/signup"
-              >
-                <div className="right-3">Registreren</div>
-              </Link>
+              {token == null ? (
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to="/signup"
+                >
+                  <div className="right-3">Registreren</div>
+                </Link>
+              ) : (
+                ""
+              )}
             </Form>
             {/* <Button variant="primary" onClick={handleShow}>
         Launch
