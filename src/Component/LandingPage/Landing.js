@@ -9,7 +9,7 @@ const Landing = () => {
       <div className="landing-main">
         <NavbarCoaching />
         <div className="oveLay">
-          <div className="title-2">Welkon bij Digi Coaching Unit</div>
+          <div className="title-2">Welkon bij Digi Coaching Unitt</div>
           <div className="description-2">
             Moderne trauners hebben graag alle data op een vaste plek.Digi
             Coaching uniy helpt daarbij. <br />
